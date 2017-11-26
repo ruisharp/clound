@@ -37,7 +37,7 @@ public class UserControl {
 	
 	@RequestMapping(value="/get/{id}" , method = RequestMethod.GET )  
     @ResponseBody
-	private User getOneUser(@PathVariable long id){
+	public User getOneUser(@PathVariable long id){
 		User user = userSevice.findByID(id);
 		return user;
 		
