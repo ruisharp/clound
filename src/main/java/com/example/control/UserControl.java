@@ -1,5 +1,7 @@
 package com.example.control;
 
+import java.util.Random;
+
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +39,7 @@ public class UserControl {
 	
 	@RequestMapping(value="/get/{id}" , method = RequestMethod.GET )  
     @ResponseBody
-	public User getOneUser(@PathVariable long id){
+	public User getOneUser(@PathVariable long id) throws Exception{
 		User user = userSevice.findByID(id);
 		return user;
 		
